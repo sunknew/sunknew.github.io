@@ -6,23 +6,27 @@
 
 ### Hexo categories
 
-| CS
-|---- Algorithms and data structure
-|-------- Algorithms
-|-------- Data structures
-|---- Artificial intelligence
-|-------- Natural language processing
-|------------ Speech recognition
-|---- Communication and security
-|-------- Computer architecture
-|-------- Operating systems
-|---- Databases
-|---- Information and coding theory
-|---- Programming languages and compilers
-|-------- Compiler theory
-|-------- Programming language pragmatics
-|---- Programming language theory
-|---- Software engineering
-|-------- Software configuration management
-|---- Theory of computation
+- CS
+  - Algorithms and data structure
+    - Algorithms
+    - Data structures
+  - Artificial intelligence
+    - Natural language processing
+      - Speech recognition
+  - Communication and security
+    - Computer network
+    - Computer security
+  - Computer architecture and engineering
+    - Computer architecture
+    - Operating systems
+  - Databases
+  - Information and coding theory
+  - Programming languages and compilers
+    - Compiler theory
+    - Programming language pragmatics
+    - Programming language theory
+  - Software engineering
+    - Software configuration management
+      - Version control system
+  - Theory of computation
 
