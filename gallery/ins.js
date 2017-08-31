@@ -114,6 +114,7 @@
       var ulTmpl = "";
       for (var j = 0, len2 = res.list.length; j < len2; j++) {
         var data = res.list[j].arr;
+        var data = res.list[j].arr;
         var liTmpl = "";
         for (var i = 0, len = data.link.length; i < len; i++) {
           var minSrc = 'https://raw.githubusercontent.com/sunknew/blog_backup/master/source/photos_min/' + data.link[i];
@@ -124,7 +125,7 @@
 
           liTmpl += '<figure class="thumb" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">\
                 <a href="' + src + '" itemprop="contentUrl" data-size="1080x1080" data-type="' + type + '" data-target="' + src + '">\
-                  <img class="reward-img" data-type="' + type + '" data-src="' + minSrc + '" src="/assets/img/empty.png" itemprop="thumbnail" onload="lzld(this)">\
+                  <img class="reward-img" data-type="' + type + '" data-src="' + minSrc + '" src="/images/Global/empty.jpg" itemprop="thumbnail" onload="lzld(this)">\
                 </a>\
                 <figcaption style="display:none" itemprop="caption description">' + data.text[i] + '</figcaption>\
             </figure>';
