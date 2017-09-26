@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://blog.sunknew.com/2017/09/25/CS/AI/NLP/tutorial_hmm_app_sp_trans_01/index.html">
 <meta property="og:site_name" content="sunknew">
 <meta property="og:description" content="声明：本文译自HMM经典论文《A tutorial on Hidden Markov Models and Selected Applications in Speech Recognition》，由于本人水平有限，翻译行文可能不是很通顺，也可能有很多错误，希望大家看到能够指出，以便及时修正。本文欢迎转载，但翻译不易，转载请注明出处，谢谢。  本文于1988年1月15日收到原稿；并于1988年10">
-<meta property="og:updated_time" content="2017-09-26T07:27:19.505Z">
+<meta property="og:updated_time" content="2017-09-26T09:46:45.688Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="（译）HMM及其在语音识别中的若干应用（一）">
 <meta name="twitter:description" content="声明：本文译自HMM经典论文《A tutorial on Hidden Markov Models and Selected Applications in Speech Recognition》，由于本人水平有限，翻译行文可能不是很通顺，也可能有很多错误，希望大家看到能够指出，以便及时修正。本文欢迎转载，但翻译不易，转载请注明出处，谢谢。  本文于1988年1月15日收到原稿；并于1988年10">
@@ -190,9 +190,10 @@
 <blockquote>
 <p>本文于1988年1月15日收到原稿；并于1988年10月4日做了修订。</p>
 <p>作者受雇于美国新泽西默里山的AT&amp;T贝尔实验室（07974-2070）。</p>
-<p>IEEE日志号 8825949。</p>
+<p>IEEE日志号 8825949。  </p>
 </blockquote>
-<p><em>尽管在20世纪60年代末70年代初才被引入研究，马尔可夫信源统计方法与隐马尔可夫模型，在近些年来却迅速流行起来。主要原因有两点。首先，该模型的数学结构十分丰富，因此很多应用可以用它构建理论基础。其次，如果使用得当，其在一些重要应用中的实际效果非常好。本篇论文仔细系统地回顾该统计模型的各种理论，并展示它们是如何应用到几个机器语音识别问题上的。</em></p>
+<p><em>尽管在20世纪60年代末70年代初才被引入研究，马尔可夫信源统计方法与隐马尔可夫模型，在近些年来却迅速流行起来。主要原因有两点。首先，该模型的数学结构十分丰富，因此很多应用可以用它构建理论基础。其次，如果使用得当，其在一些重要应用中的实际效果非常好。本篇论文仔细系统地回顾该统计模型的各种理论，并展示它们是如何应用到几个机器语音识别问题上的。</em>  </p>
+<a id="more"></a>
 <h3 id="I-简介"><a href="#I-简介" class="headerlink" title="I.简介"></a>I.简介</h3><p>​    现实世界中的处理过程通常会输出可观测的结果，这些结果可以用各种信号表示。在自然界中，这些信号可能是离散的（如，字母表中的字母，码表中的码矢等），也可能是连续的（如，语音样本，温度的测量值，音乐等）。可能是平稳的（即，其统计特征不随时间变化），也可能是非平稳的（即，其信号特征会随时间变化）。可能是纯净的（即，信号直接来自信号源），也可能因其他信号源（如，噪声）、传输失真、混响等因素污染。 </p>
 <p>​    最根本的问题是，如何使用信号模型描述自然信号。那么为什么我们热衷于使用信号模型呢？主要有以下原因。首先，信号处理系统用于处理信号输出期望值，而信号模型就是信号处理系统理论描述的基础。比如，如果我们希望增强因噪音和传输失真受损的信号，就可以依据信号模型来设计一个能够理想地消除噪声还原失真的系统。其次，信号模型为我们提供了在脱离信号源（即，现实世界中信号的产生过程）的情况下，仍能较全面地研究信号源的可能。这点在从自然信号源中获取信号的代价高昂时尤为重要。在这种情况下，我们可以通过模拟信号源，无限制的进行相关研究。最后，也是最重要的原因，信号模型之所以如此重要，是因为它在实际应用中的表现非常好，我们可以用它高效地实现各种重要实用的系统——比如，预测系统、识别系统、认证系统等。</p>
 <p>​    确定性模型通常利用的信号已知的明确特性，比如，信号是一个正弦波或指数和等。在这种情况下，信号模型的设定是明确的，唯一需要做的就是确定（估计）模型中各参数的值（如，正弦波形的振幅、频率、相位，指数函数的振幅和率等）。信号模型的第二个大类是统计模型，统计模型试图只描述信号的统计特征。这类模型中可能包含高斯过程，泊松过程，马尔可夫过程，以及隐马尔可夫过程等。统计模型的基本假设是，信号可以使用参变随机过程恰当地描述，且随机过程的参数可以使用通过明确而严格方法确定（估计）。</p>
@@ -478,11 +479,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color3">SR</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">SR</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
             
             <div class="clearfix"></div>
