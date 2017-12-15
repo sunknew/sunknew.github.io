@@ -25,7 +25,7 @@
 <meta property="og:image" content="http://blog.sunknew.com/images/CS/201712/linux_ssh_passwordless_login_copyid.jpg">
 <meta property="og:image" content="http://blog.sunknew.com/images/CS/201712/linux_ssh_passwordless_login_authorized_keys_01.jpg">
 <meta property="og:image" content="http://blog.sunknew.com/images/CS/201712/linux_ssh_passwordless_login_authorized_keys_02.jpg">
-<meta property="og:updated_time" content="2017-12-15T05:57:02.749Z">
+<meta property="og:updated_time" content="2017-12-15T06:34:59.787Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux SSH 免密登陆">
 <meta name="twitter:description" content="简述传统的网络传输协议，如HTTP、FTP、Telnet、RSH等，设计实现并未考虑安全机制，很容易受到中间人攻击，传输的数据被截获篡改。SSH则提供一系列的机制来保证传输安全。本文讨论的Linux SSH的免密登陆，用到了SSH的一个重要功能——基于公开密钥加密算法的身份认证。  验证使用的Linux版本为：CentOS Linux release 7.3.1611 (Core)   本文额外介">
@@ -213,8 +213,8 @@
 </li>
 <li>用户SSH的配置目录，默认路径为：<code>~/.ssh</code><ul>
 <li>rsa、ecdsa后缀的文件：使用相应算法生成的公钥私钥，用于本用户的身份认证</li>
-<li><a href="https://www.ssh.com/ssh/host-key#sec-Known-Host-Keys" target="_blank" rel="noopener">known_hosts</a>：保存本用户已验证的主机的公钥，用于本用户访问相应主机时（主机）的身份验证</li>
-<li><a href="https://www.ssh.com/ssh/authorized_keys/" target="_blank" rel="noopener">authorized_keys</a>：保存本用户已验证的用户的公钥，用于其他用户免密登陆本用户时（用户）的身份验证</li>
+<li><a href="https://www.ssh.com/ssh/host-key#sec-Known-Host-Keys" target="_blank" rel="noopener">known_hosts</a>：保存本用户信任的主机公钥，用于本用户访问相应主机时（主机）的身份验证</li>
+<li><a href="https://www.ssh.com/ssh/authorized_keys/" target="_blank" rel="noopener">authorized_keys</a>：保存本用户信任的用户公钥，用于其他用户免密登陆本用户时（用户）的身份验证</li>
 </ul>
 </li>
 </ul>
