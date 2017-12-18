@@ -4,6 +4,8 @@
 
 示例效果：[http://blog.sunknew.com/](http://blog.sunknew.com/)
 
+由于维护太麻烦，再加上github的一些限制，已放弃此方案。
+
 
 
 ### Hexo categories
